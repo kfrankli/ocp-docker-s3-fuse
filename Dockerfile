@@ -1,5 +1,5 @@
 FROM fedora:latest
-
+USER 1001
 ENV MOUNT_POINT=/var/s3
 VOLUME /var/s3
 
