@@ -24,7 +24,7 @@ This project contains:
 
 To allow the container to run the needed `/usr/bin/s3fs` commands, it will need to be granted elevated privileges by way of enabling extra Linux kernel capabilities and mapping to the host FUSE device. Unfortunately the `/usr/bin/s3fs` commands are performing `mount()` operations that require the highest level Linux kernel capability `CAP_SYS_ADMIN`. With this capability, comes significant rights due to issues with Linux Kernel development and a lack of fine-grained control in capabilities. Enabling this will allow for such potentially malicious things as [modifying the state of the SELinux Linux Security Module inside of the container](https://www.redhat.com/en/blog/container-tidbits-adding-capabilities-container).
 
-The container will also need the `--device` option set to allow it to see the Docker host's FUSE device to interact with the S3 Bucket. This could potentially lead to such issues as the development of covert channels between containers on the same Docker host.
+The container will also need the `--device` option set to allow it to see the Docker host's FUSE device to interact with the S3 Bucket. This could potentially lead to such issues as the development of covert storage channels between containers on the same Docker host.
 
 For further information, please consult:
 
