@@ -1,4 +1,4 @@
-FROM ubi7/ubi:latest
+FROM registry.access.redhat.com/ubi7/ubi:latest
 
 ENV MOUNT_POINT=/var/s3
 VOLUME /var/s3
