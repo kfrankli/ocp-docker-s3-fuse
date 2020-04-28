@@ -9,7 +9,7 @@ RUN yum install automake fuse fuse-devel -y
 RUN yum install gcc-c++ git libcurl-devel -y 
 RUN yum install libxml2-devel make openssl-devel -y
 RUN git clone https://github.com/s3fs-fuse/s3fs-fuse.git 
-RUN cd s3fs-fuse
+WORKDIR s3fs-fuse
 RUN ./autogen.sh 
 RUN ./configure --prefix=/usr 
 RUN make 
