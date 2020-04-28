@@ -11,7 +11,7 @@ RUN yum install libxml2-devel make openssl-devel -y
 RUN git clone https://github.com/s3fs-fuse/s3fs-fuse.git 
 WORKDIR s3fs-fuse
 RUN ./autogen.sh 
-RUN ./configure --prefix=/usr 
+RUN ./configure
 RUN make 
 RUN make install 
 RUN rm -rf /var/cache/apk/*
